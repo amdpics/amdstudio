@@ -2,10 +2,8 @@
   command = "echo 'Site is ready'"
   publish = "."
 
-[[notifications]]
-  member_emails = ["alimd.pics@gmail.com"]
+[[forms]]
+  name = "contact"
   
-[notifications.outgoing_webhooks]
-  [[notifications.outgoing_webhooks.hooks]]
-    events = ["form_submission"]
-    url = "https://script.google.com/macros/s/AKfycbyXDaMkplH9-ImfYBDlP5Liri3RRCky8wNRn_NAa9yDxA4RcDjmnSWqEWCaIGUwKhkH/exec"
+[notifications]
+  member_emails = ["alimd.pics@gmail.com"]

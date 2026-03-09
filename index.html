@@ -1051,35 +1051,35 @@ footer{flex-direction:column;gap:20px;text-align:center;}
         <p style="font-size:14px;color:var(--light);line-height:1.8;">We typically respond within 24 hours. For rush projects, please mention your deadline in the message.</p>
       </div>
     </div>
-    <form class="contact-form" name="contact" method="POST" netlify>
+    <div class="contact-form">
       <h3>Start a Project</h3>
       <div class="form-group">
         <label>Your Name</label>
-        <input type="text" name="name" placeholder="Full name" required/>
+        <input type="text" placeholder="Full name"/>
       </div>
       <div class="form-group">
         <label>Email Address</label>
-        <input type="email" name="email" placeholder="your@email.com" required/>
+        <input type="email" placeholder="your@email.com"/>
       </div>
       <div class="form-group">
         <label>Service Interested In</label>
-        <select name="service" required>
+        <select>
           <option value="">Select a service...</option>
-          <option value="AI Commercial Video">AI Commercial Video</option>
-          <option value="Photography / Videography">Photography / Videography</option>
-          <option value="Meta & TikTok Ads">Meta & TikTok Ads</option>
-          <option value="Social Media Management">Social Media Management</option>
-          <option value="Content Package">Content Package</option>
-          <option value="Graphic Design">Graphic Design</option>
-          <option value="Not sure yet">Not sure yet</option>
+          <option>AI Commercial Video</option>
+          <option>Photography / Videography</option>
+          <option>Meta & TikTok Ads</option>
+          <option>Social Media Management</option>
+          <option>Content Package</option>
+          <option>Graphic Design</option>
+          <option>Not sure yet</option>
         </select>
       </div>
       <div class="form-group">
         <label>Tell Us About Your Project</label>
-        <textarea name="message" placeholder="Describe your brand, goals, and what you're looking to create..." required></textarea>
+        <textarea placeholder="Describe your brand, goals, and what you're looking to create..."></textarea>
       </div>
-      <button class="form-submit" type="submit">Send Message →</button>
-    </form>
+      <button class="form-submit" onclick="handleFormSubmit()">Send Message →</button>
+    </div>
   </div>
   <footer>
     <div class="footer-logo">AMD STUDIO</div>
@@ -1550,8 +1550,26 @@ function toggleMenu() {
 }
 
 // ---- FORM ----
-// Form is now handled by Netlify Forms (see form element with netlify attribute)
+function handleFormSubmit() {
+  const btn = document.querySelector('#page-contact .form-submit');
+  const form = document.querySelector('#page-contact .contact-form');
+  const name = form.querySelector('input[type="text"]').value.trim();
+  const email = form.querySelector('input[type="email"]').value.trim();
+  const service = form.querySelector('select').value;
+  const message = form.querySelector('textarea').value.trim();
 
+  if (!name || !email || !message) {
+    alert('Please fill out your name, email, and project details.');
+    return;
+  }
+
+  btn.textContent = 'Message Ready';
+  btn.disabled = true;
+
+  alert(`Thanks${name ? ', ' + name : ''}! Your message is ready. Next, connect this form to Formspree, Netlify Forms, or your own backend to actually send emails.`);
+
+  console.log({ name, email, service, message });
+}
 </script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: amdpics/amdstudio
+  branch: main
+  auth_endpoint: https://github.com/login/oauth/authorize
+  cms_label_prefix: netlify-cms/
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "content/home.md"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Hero Text", name: "hero", widget: "text"}
+          - {label: "About Section", name: "about", widget: "text"}

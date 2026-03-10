@@ -3,7 +3,8 @@ backend:
   repo: amdpics/amdstudio
   branch: main
   auth_endpoint: https://github.com/login/oauth/authorize
-  cms_label_prefix: netlify-cms/
+  client_id: $OAUTH_CLIENT_ID
+  client_secret: $OAUTH_CLIENT_SECRET
 
 media_folder: "images"
 public_folder: "/images"

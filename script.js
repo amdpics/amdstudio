@@ -84,5 +84,34 @@ function toggleMenu() {
   menu.classList.toggle('open');
 }
 
+// ---- BEFORE/AFTER SLIDER ----
+function initBASlider() {
+  const slider = document.getElementById('baSlider');
+  if (!slider) return;
+  const handle      = document.getElementById('baHandle');
+  const beforeWrap  = slider.querySelector('.ba-before-wrap');
+  const beforeImg   = slider.querySelector('.ba-before');
+
+  function syncWidth() { beforeImg.style.width = slider.offsetWidth + 'px'; }
+  syncWidth();
+  window.addEventListener('resize', syncWidth);
+
+  function setPos(clientX) {
+    const r = slider.getBoundingClientRect();
+    const pct = Math.max(0.02, Math.min(0.98, (clientX - r.left) / r.width));
+    beforeWrap.style.width = pct * 100 + '%';
+    handle.style.left      = pct * 100 + '%';
+  }
+
+  let active = false;
+  slider.addEventListener('mousedown',  e => { active = true;  setPos(e.clientX); });
+  window.addEventListener('mouseup',    ()  => { active = false; });
+  window.addEventListener('mousemove',  e => { if (active) setPos(e.clientX); });
+  slider.addEventListener('touchstart', e => { active = true;  setPos(e.touches[0].clientX); }, {passive:true});
+  window.addEventListener('touchend',   ()  => { active = false; });
+  window.addEventListener('touchmove',  e => { if (active) setPos(e.touches[0].clientX); }, {passive:true});
+}
+document.addEventListener('DOMContentLoaded', initBASlider);
+
 // ---- FORM ----
 // Form is now handled by Netlify Forms (see form element with netlify attribute)

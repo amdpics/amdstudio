@@ -312,7 +312,8 @@ footer{flex-direction:column;gap:20px;text-align:center;}
 .niche-stat-box h3{font-family:var(--font-display);font-size:48px;color:var(--green);line-height:1;margin-bottom:6px;}
 .niche-stat-box span{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);}
 .niche-gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:48px;}
-.niche-gallery-item{aspect-ratio:4/3;background:var(--bg3);border:1px solid var(--border);position:relative;overflow:hidden;border-radius:12px;}
+.niche-gallery-item{aspect-ratio:4/3;background:var(--bg3);border:1px solid var(--border);position:relative;overflow:hidden;border-radius:12px;cursor:pointer;transition:transform 0.3s;}
+.niche-gallery-item:hover{transform:scale(1.02);}
 .niche-gallery-item:nth-child(1){aspect-ratio:16/9;grid-column:span 2;}
 .niche-gallery-item:nth-child(4){aspect-ratio:1/1;}
 .niche-gallery-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;}

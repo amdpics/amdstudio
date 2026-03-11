@@ -1,0 +1,313 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "images"
+
+collections:
+  # ── SITE CONTENT (single JSON file) ──────────────────────────────────────
+  - name: "site_content"
+    label: "Site Content"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "data/content.json"
+        fields:
+
+          # HERO
+          - label: "Hero Tag Line"
+            name: "hero_tag"
+            widget: "string"
+            hint: "Small label above the main heading (e.g. AI-Powered Creative Studio)"
+
+          - label: "Hero Title (HTML allowed)"
+            name: "hero_title"
+            widget: "string"
+            hint: "Use <br/> for line breaks and <em>text</em> for blue text"
+
+          - label: "Hero Subtitle"
+            name: "hero_subtitle"
+            widget: "text"
+
+          - label: "Stat 1 — Number"
+            name: "stat1_num"
+            widget: "string"
+            hint: "Number only (e.g. 10 — the + is added automatically)"
+
+          - label: "Stat 1 — Label"
+            name: "stat1_label"
+            widget: "string"
+
+          - label: "Stat 2 — Number"
+            name: "stat2_num"
+            widget: "string"
+
+          - label: "Stat 2 — Label"
+            name: "stat2_label"
+            widget: "string"
+
+          - label: "Stat 3 — Number"
+            name: "stat3_num"
+            widget: "string"
+
+          - label: "Stat 3 — Label"
+            name: "stat3_label"
+            widget: "string"
+
+          # BRAND STRIP
+          - label: "Brand Strip — Brands"
+            name: "brands"
+            widget: "list"
+            field:
+              label: "Brand Name"
+              name: "brand"
+              widget: "string"
+            hint: "Each entry is one brand name shown in the scrolling strip"
+
+          # WHO WE WORK WITH
+          - label: "Who We Work With — Section Label"
+            name: "for_label"
+            widget: "string"
+
+          - label: "Who We Work With — Section Title (HTML allowed)"
+            name: "for_title"
+            widget: "string"
+            hint: "Use <br/> for line breaks"
+
+          - label: "Who We Work With — Section Subtitle"
+            name: "for_subtitle"
+            widget: "text"
+
+          - label: "Card 1 — Image"
+            name: "card1_image"
+            widget: "image"
+
+          - label: "Card 1 — Title"
+            name: "card1_title"
+            widget: "string"
+
+          - label: "Card 1 — Description"
+            name: "card1_desc"
+            widget: "text"
+
+          - label: "Card 2 — Image"
+            name: "card2_image"
+            widget: "image"
+
+          - label: "Card 2 — Title"
+            name: "card2_title"
+            widget: "string"
+
+          - label: "Card 2 — Description"
+            name: "card2_desc"
+            widget: "text"
+
+          - label: "Card 3 — Image"
+            name: "card3_image"
+            widget: "image"
+
+          - label: "Card 3 — Title"
+            name: "card3_title"
+            widget: "string"
+
+          - label: "Card 3 — Description"
+            name: "card3_desc"
+            widget: "text"
+
+          # PROCESS
+          - label: "Process — Section Label"
+            name: "process_label"
+            widget: "string"
+
+          - label: "Process — Section Title (HTML allowed)"
+            name: "process_title"
+            widget: "string"
+            hint: "Use <br/> for line breaks"
+
+          - label: "Step 1 — Title"
+            name: "step1_title"
+            widget: "string"
+
+          - label: "Step 1 — Description"
+            name: "step1_desc"
+            widget: "text"
+
+          - label: "Step 2 — Title"
+            name: "step2_title"
+            widget: "string"
+
+          - label: "Step 2 — Description"
+            name: "step2_desc"
+            widget: "text"
+
+          - label: "Step 3 — Title"
+            name: "step3_title"
+            widget: "string"
+
+          - label: "Step 3 — Description"
+            name: "step3_desc"
+            widget: "text"
+
+          - label: "Step 4 — Title"
+            name: "step4_title"
+            widget: "string"
+
+          - label: "Step 4 — Description"
+            name: "step4_desc"
+            widget: "text"
+
+          # BEFORE / AFTER SLIDER
+          - label: "Slider — Section Label"
+            name: "slider_label"
+            widget: "string"
+
+          - label: "Slider — Title"
+            name: "slider_title"
+            widget: "string"
+
+          - label: "Slider — Subtitle"
+            name: "slider_subtitle"
+            widget: "text"
+
+          - label: "Slider — Before Image"
+            name: "slider_before"
+            widget: "image"
+
+          - label: "Slider — After Image"
+            name: "slider_after"
+            widget: "image"
+
+          # TESTIMONIALS
+          - label: "Testimonial 1 — Quote"
+            name: "t1_quote"
+            widget: "text"
+
+          - label: "Testimonial 1 — Name"
+            name: "t1_name"
+            widget: "string"
+
+          - label: "Testimonial 1 — Role"
+            name: "t1_role"
+            widget: "string"
+
+          - label: "Testimonial 2 — Quote"
+            name: "t2_quote"
+            widget: "text"
+
+          - label: "Testimonial 2 — Name"
+            name: "t2_name"
+            widget: "string"
+
+          - label: "Testimonial 2 — Role"
+            name: "t2_role"
+            widget: "string"
+
+          - label: "Testimonial 3 — Quote"
+            name: "t3_quote"
+            widget: "text"
+
+          - label: "Testimonial 3 — Name"
+            name: "t3_name"
+            widget: "string"
+
+          - label: "Testimonial 3 — Role"
+            name: "t3_role"
+            widget: "string"
+
+          # ABOUT PAGE
+          - label: "About — Section Label"
+            name: "about_label"
+            widget: "string"
+
+          - label: "About — Headline (HTML allowed)"
+            name: "about_headline"
+            widget: "string"
+            hint: "Use <br/> for line breaks and <em>text</em> for blue text"
+
+          - label: "About — Paragraph 1 (HTML allowed)"
+            name: "about_p1"
+            widget: "text"
+            hint: "Use <strong>text</strong> for bold"
+
+          - label: "About — Paragraph 2 (HTML allowed)"
+            name: "about_p2"
+            widget: "text"
+
+          - label: "About — Paragraph 3 (HTML allowed)"
+            name: "about_p3"
+            widget: "text"
+
+          - label: "About — Paragraph 4 (HTML allowed)"
+            name: "about_p4"
+            widget: "text"
+
+          - label: "About Stat 1 — Number"
+            name: "about_stat1_num"
+            widget: "string"
+            hint: "e.g. 10+"
+
+          - label: "About Stat 1 — Label"
+            name: "about_stat1_label"
+            widget: "string"
+
+          - label: "About Stat 2 — Number"
+            name: "about_stat2_num"
+            widget: "string"
+
+          - label: "About Stat 2 — Label"
+            name: "about_stat2_label"
+            widget: "string"
+
+          - label: "About Stat 3 — Number"
+            name: "about_stat3_num"
+            widget: "string"
+
+          - label: "About Stat 3 — Label"
+            name: "about_stat3_label"
+            widget: "string"
+
+          - label: "About Stat 4 — Number"
+            name: "about_stat4_num"
+            widget: "string"
+
+          - label: "About Stat 4 — Label"
+            name: "about_stat4_label"
+            widget: "string"
+
+  # ── GALLERY ──────────────────────────────────────────────────────────────
+  - name: "gallery"
+    label: "Gallery"
+    files:
+      - label: "Gallery Items"
+        name: "gallery_items"
+        file: "data/gallery.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.label}} — {{fields.category}}"
+            fields:
+              - label: "File (Image or Video)"
+                name: "file"
+                widget: "file"
+                hint: "Upload a .jpg/.png/.webp image OR a .mp4/.webm video. Type is detected automatically."
+
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - {label: "Cars", value: "cars"}
+                  - {label: "Apparel", value: "apparel"}
+                  - {label: "Portraits", value: "portraits"}
+
+              - label: "Label"
+                name: "label"
+                widget: "string"
+                hint: "Short caption shown on the card (e.g. AI Commercial, Studio Shot)"
+
+              - label: "Poster / Thumbnail (videos only)"
+                name: "poster"
+                widget: "image"
+                required: false
+                hint: "Optional: upload a still image to use as the video thumbnail in the grid"

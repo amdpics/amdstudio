@@ -1,9 +1,12 @@
 // ---- CMS CONTENT LOADER ----
 async function loadContent() {
   try {
-    const res = await fetch('/data/content.json?t=' + Date.now());
-    if (!res.ok) return;
-    const c = await res.json();
+    const t = Date.now();
+    const files = ['content-home', 'content-auto', 'content-apparel', 'content-biz', 'content-pricing', 'content-contact'];
+    const results = await Promise.all(
+      files.map(f => fetch('/data/' + f + '.json?t=' + t).then(r => r.ok ? r.json() : {}))
+    );
+    const c = Object.assign({}, ...results);
 
     const set = (id, val, html) => {
       const el = document.getElementById(id);
@@ -179,6 +182,16 @@ async function loadContent() {
     set('cms-price-pkg1', c.price_pkg1);
     set('cms-price-pkg2', c.price_pkg2);
     set('cms-price-pkg3', c.price_pkg3);
+
+    // Contact Page
+    set('cms-contact-email', c.contact_email);
+    const igEl = document.getElementById('cms-contact-instagram');
+    if (igEl && c.contact_instagram) {
+      igEl.textContent = c.contact_instagram;
+      igEl.href = 'https://instagram.com/' + c.contact_instagram.replace('@', '');
+    }
+    set('cms-contact-location', c.contact_location);
+    set('cms-contact-response', c.contact_response);
 
   } catch (e) {
     // Silently fail — hardcoded HTML content remains as fallback

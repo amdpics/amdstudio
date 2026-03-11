@@ -115,16 +115,15 @@ section{padding:120px 60px;}
 
 /* BEFORE/AFTER SLIDER */
 .slider-section{text-align:center;padding-left:40px;padding-right:40px;}
-.ba-slider{position:relative;width:100%;max-width:1200px;margin:56px auto 0;overflow:hidden;border-radius:12px;border:1px solid var(--border);cursor:col-resize;user-select:none;touch-action:none;aspect-ratio:16/9;}
-.ba-after{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
-.ba-before-wrap{position:absolute;inset:0;width:50%;overflow:hidden;z-index:2;}
-.ba-before{position:absolute;top:0;left:0;height:100%;object-fit:cover;display:block;}
-.ba-handle{position:absolute;top:0;bottom:0;left:50%;z-index:3;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;pointer-events:none;}
+.ba-slider{position:relative;width:100%;max-width:900px;margin:56px auto 0;overflow:hidden;border-radius:12px;border:1px solid var(--border);cursor:col-resize;user-select:none;touch-action:none;aspect-ratio:1/1;}
+.ba-before{position:absolute;inset:0;background:url(images/before.jpg) center/cover no-repeat;}
+.ba-after-wrap{position:absolute;top:0;left:0;bottom:0;width:30%;background:url(images/after.jpg) center/cover no-repeat;z-index:2;}
+.ba-handle{position:absolute;top:0;bottom:0;left:30%;z-index:3;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;pointer-events:none;}
 .ba-line{flex:1;width:2px;background:rgba(255,255,255,0.9);}
 .ba-circle{width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;gap:4px;font-size:11px;color:#000;flex-shrink:0;box-shadow:0 2px 16px rgba(0,0,0,0.4);}
-.ba-label{position:absolute;top:16px;font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:8px;z-index:4;pointer-events:none;}
-.ba-label-before{left:16px;background:rgba(0,0,0,0.55);color:var(--gray);}
-.ba-label-after{right:16px;background:rgba(0,170,255,0.15);color:var(--green);border:1px solid rgba(0,170,255,0.3);}
+.ba-label{position:absolute;top:16px;font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:6px;z-index:4;pointer-events:none;background:#fff;color:#000;font-weight:600;}
+.ba-label-before{right:16px;}
+.ba-label-after{left:16px;}
 
 /* TESTIMONIALS */
 .testimonials-section{}

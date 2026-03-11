@@ -86,16 +86,17 @@ function toggleMenu() {
 
 // ---- BEFORE/AFTER SLIDER ----
 function initBASlider() {
-  const slider    = document.getElementById('baSlider');
+  const slider  = document.getElementById('baSlider');
   if (!slider) return;
-  const handle    = document.getElementById('baHandle');
-  const afterWrap = document.getElementById('baAfterWrap');
+  const handle  = document.getElementById('baHandle');
+  const afterEl = document.getElementById('baAfter');
 
   function setPos(clientX) {
-    const r   = slider.getBoundingClientRect();
-    const pct = Math.max(0.02, Math.min(0.98, (clientX - r.left) / r.width));
-    afterWrap.style.width = pct * 100 + '%';
-    handle.style.left     = pct * 100 + '%';
+    const r          = slider.getBoundingClientRect();
+    const pct        = Math.max(0.02, Math.min(0.98, (clientX - r.left) / r.width));
+    const rightClip  = (1 - pct) * 100;
+    afterEl.style.clipPath = `inset(0 ${rightClip}% 0 0)`;
+    handle.style.left      = pct * 100 + '%';
   }
 
   let active = false;

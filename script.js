@@ -86,21 +86,16 @@ function toggleMenu() {
 
 // ---- BEFORE/AFTER SLIDER ----
 function initBASlider() {
-  const slider = document.getElementById('baSlider');
+  const slider    = document.getElementById('baSlider');
   if (!slider) return;
-  const handle      = document.getElementById('baHandle');
-  const beforeWrap  = slider.querySelector('.ba-before-wrap');
-  const beforeImg   = slider.querySelector('.ba-before');
-
-  function syncWidth() { beforeImg.style.width = slider.offsetWidth + 'px'; }
-  syncWidth();
-  window.addEventListener('resize', syncWidth);
+  const handle    = document.getElementById('baHandle');
+  const afterWrap = document.getElementById('baAfterWrap');
 
   function setPos(clientX) {
-    const r = slider.getBoundingClientRect();
+    const r   = slider.getBoundingClientRect();
     const pct = Math.max(0.02, Math.min(0.98, (clientX - r.left) / r.width));
-    beforeWrap.style.width = pct * 100 + '%';
-    handle.style.left      = pct * 100 + '%';
+    afterWrap.style.width = pct * 100 + '%';
+    handle.style.left     = pct * 100 + '%';
   }
 
   let active = false;

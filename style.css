@@ -170,16 +170,30 @@ section{padding:120px 60px;}
 .gallery-tabs{display:flex;gap:8px;margin-top:48px;}
 .gallery-tab{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:10px 24px;border-radius:8px;border:1px solid var(--border);color:var(--gray);cursor:pointer;transition:all 0.25s;background:transparent;}
 .gallery-tab.active,.gallery-tab:hover{border-color:var(--green);color:var(--green);background:var(--green-dim);}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 60px 80px;}
-.gallery-item{aspect-ratio:3/4;background:var(--bg3);border:1px solid var(--border);position:relative;overflow:hidden;cursor:pointer;transition:transform 0.3s;border-radius:12px;}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:0 60px 80px;}
+.gallery-item{aspect-ratio:16/9;background:var(--bg3);border:1px solid var(--border);position:relative;overflow:hidden;cursor:pointer;transition:transform 0.3s;border-radius:12px;}
 .gallery-item:hover{transform:scale(1.02);}
-.gallery-item:nth-child(2){aspect-ratio:3/5;}
-.gallery-item:nth-child(4){aspect-ratio:4/3;}
-.gallery-item:nth-child(6){aspect-ratio:1/1;}
-.gallery-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;}
-.gallery-placeholder span{font-family:var(--font-display);font-size:48px;color:rgba(255,255,255,0.06);}
-.gallery-placeholder small{font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.15);}
-.gallery-label{position:absolute;bottom:16px;left:16px;font-family:var(--font-mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gray);}
+.gallery-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px;transition:transform 0.4s;}
+.gallery-item:hover img{transform:scale(1.05);}
+.gallery-item-video{background:var(--bg3);display:flex;align-items:center;justify-content:center;}
+.gallery-play-btn{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;backdrop-filter:blur(4px);transition:all 0.25s;z-index:2;}
+.gallery-item:hover .gallery-play-btn{background:var(--green);border-color:var(--green);color:#000;}
+.gallery-label{position:absolute;bottom:16px;left:16px;font-family:var(--font-mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gray);z-index:2;}
+.gallery-empty,.gallery-loading{grid-column:1/-1;text-align:center;padding:80px 20px;font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.96);z-index:2000;display:none;flex-direction:column;align-items:center;justify-content:center;}
+.lightbox.open{display:flex;}
+.lb-close{position:absolute;top:20px;right:24px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:20px;width:44px;height:44px;border-radius:50%;cursor:pointer;z-index:2001;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.lb-close:hover{background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.4);}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:20px;width:48px;height:48px;border-radius:50%;cursor:pointer;z-index:2001;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.lb-nav:hover{background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.4);}
+.lb-prev{left:24px;}
+.lb-next{right:24px;}
+.lb-content{max-width:90vw;max-height:85vh;display:flex;align-items:center;justify-content:center;}
+.lb-content img{max-width:90vw;max-height:85vh;width:auto;height:auto;object-fit:contain;border-radius:8px;display:block;}
+.lb-content video{max-width:90vw;max-height:85vh;width:auto;height:auto;border-radius:8px;outline:none;background:#000;}
+.lb-caption{margin-top:16px;font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);text-align:center;}
 
 /* PRICING PAGE */
 .pricing-hero{padding:140px 60px 60px;}

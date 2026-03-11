@@ -1,0 +1,33 @@
+{
+  "biz_hero_bg": "images/card-business.jpg",
+  "biz_hero_title": "Content for Brands<br/>That <em>Mean Business.</em>",
+  "biz_hero_sub": "From local businesses to scaling brands — AMD STUDIO creates content that builds authority, grows audiences, and turns followers into customers.",
+  "biz_overview_h2": "Your Brand,<br/><em>Elevated.</em>",
+  "biz_p1": "You don't need to be in a niche industry to need world-class content. Whether you're a local service business, a growing e-commerce brand, or a professional building a personal brand — AMD STUDIO has a package for you.",
+  "biz_p2": "We handle everything: creative strategy, content production, social media management, and paid advertising — so you can focus on running your business while your brand grows on autopilot.",
+  "biz_bullets": [
+    "AI and real-camera content production",
+    "Social media management (3–5x/week posting)",
+    "Meta & TikTok paid advertising",
+    "Brand identity & graphic design",
+    "Monthly strategy meetings & performance reports"
+  ],
+  "biz_stat1_num": "5×",
+  "biz_stat1_label": "Weekly posting cadence (Authority tier)",
+  "biz_stat2_num": "24hr",
+  "biz_stat2_label": "Daily DM & comment engagement",
+  "biz_stat3_num": "Full",
+  "biz_stat3_label": "End-to-end creative management",
+  "biz_stat4_num": "Any",
+  "biz_stat4_label": "Industry — we quote all custom work",
+  "biz_cta_h2": "Let's build something<br/><em>unforgettable.</em>",
+  "biz_cta_p": "No matter your industry — if you need content that builds authority and grows your audience, we have a package for you.",
+  "biz_pkg1_tier": "Content",
+  "biz_pkg1_name": "Starter Video",
+  "biz_pkg1_price": "600",
+  "biz_pkg2_tier": "Social Media",
+  "biz_pkg2_name": "Growth Management",
+  "biz_pkg2_price": "2,500",
+  "biz_pkg3_tier": "Custom",
+  "biz_pkg3_name": "Something Custom?"
+}

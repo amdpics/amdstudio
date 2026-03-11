@@ -100,6 +100,86 @@ async function loadContent() {
     set('cms-about-stat4-num', c.about_stat4_num);
     set('cms-about-stat4-label', c.about_stat4_label);
 
+    // Niche — Automotive
+    setBg('nicheAutoBgImg', c.auto_hero_bg);
+    set('cms-auto-hero-title', c.auto_hero_title, true);
+    set('cms-auto-hero-sub', c.auto_hero_sub);
+    set('cms-auto-overview-h2', c.auto_overview_h2, true);
+    set('cms-auto-p1', c.auto_p1);
+    set('cms-auto-p2', c.auto_p2);
+    if (Array.isArray(c.auto_bullets)) {
+      const ul = document.getElementById('cms-auto-bullets');
+      if (ul) ul.innerHTML = c.auto_bullets.map(b => '<li>' + b + '</li>').join('');
+    }
+    set('cms-auto-stat1-num', c.auto_stat1_num); set('cms-auto-stat1-label', c.auto_stat1_label);
+    set('cms-auto-stat2-num', c.auto_stat2_num); set('cms-auto-stat2-label', c.auto_stat2_label);
+    set('cms-auto-stat3-num', c.auto_stat3_num); set('cms-auto-stat3-label', c.auto_stat3_label);
+    set('cms-auto-stat4-num', c.auto_stat4_num); set('cms-auto-stat4-label', c.auto_stat4_label);
+    set('cms-auto-cta-h2', c.auto_cta_h2, true);
+    set('cms-auto-cta-p', c.auto_cta_p);
+    set('cms-auto-p1-tier', c.auto_pkg1_tier); set('cms-auto-p1-name', c.auto_pkg1_name); set('cms-auto-p1-price', c.auto_pkg1_price);
+    set('cms-auto-p2-tier', c.auto_pkg2_tier); set('cms-auto-p2-name', c.auto_pkg2_name); set('cms-auto-p2-price', c.auto_pkg2_price);
+    set('cms-auto-p3-tier', c.auto_pkg3_tier); set('cms-auto-p3-name', c.auto_pkg3_name); set('cms-auto-p3-price', c.auto_pkg3_price);
+
+    // Niche — Apparel
+    setBg('nicheApparelBgImg', c.app_hero_bg);
+    set('cms-app-hero-title', c.app_hero_title, true);
+    set('cms-app-hero-sub', c.app_hero_sub);
+    set('cms-app-overview-h2', c.app_overview_h2, true);
+    set('cms-app-p1', c.app_p1);
+    set('cms-app-p2', c.app_p2);
+    if (Array.isArray(c.app_bullets)) {
+      const ul = document.getElementById('cms-app-bullets');
+      if (ul) ul.innerHTML = c.app_bullets.map(b => '<li>' + b + '</li>').join('');
+    }
+    set('cms-app-stat1-num', c.app_stat1_num); set('cms-app-stat1-label', c.app_stat1_label);
+    set('cms-app-stat2-num', c.app_stat2_num); set('cms-app-stat2-label', c.app_stat2_label);
+    set('cms-app-stat3-num', c.app_stat3_num); set('cms-app-stat3-label', c.app_stat3_label);
+    set('cms-app-stat4-num', c.app_stat4_num); set('cms-app-stat4-label', c.app_stat4_label);
+    set('cms-app-cta-h2', c.app_cta_h2, true);
+    set('cms-app-cta-p', c.app_cta_p);
+    set('cms-app-p1-tier', c.app_pkg1_tier); set('cms-app-p1-name', c.app_pkg1_name); set('cms-app-p1-price', c.app_pkg1_price);
+    set('cms-app-p2-tier', c.app_pkg2_tier); set('cms-app-p2-name', c.app_pkg2_name); set('cms-app-p2-price', c.app_pkg2_price);
+    set('cms-app-p3-tier', c.app_pkg3_tier); set('cms-app-p3-name', c.app_pkg3_name); set('cms-app-p3-price', c.app_pkg3_price);
+
+    // Niche — Business
+    setBg('nicheBusinessBgImg', c.biz_hero_bg);
+    set('cms-biz-hero-title', c.biz_hero_title, true);
+    set('cms-biz-hero-sub', c.biz_hero_sub);
+    set('cms-biz-overview-h2', c.biz_overview_h2, true);
+    set('cms-biz-p1', c.biz_p1);
+    set('cms-biz-p2', c.biz_p2);
+    if (Array.isArray(c.biz_bullets)) {
+      const ul = document.getElementById('cms-biz-bullets');
+      if (ul) ul.innerHTML = c.biz_bullets.map(b => '<li>' + b + '</li>').join('');
+    }
+    set('cms-biz-stat1-num', c.biz_stat1_num); set('cms-biz-stat1-label', c.biz_stat1_label);
+    set('cms-biz-stat2-num', c.biz_stat2_num); set('cms-biz-stat2-label', c.biz_stat2_label);
+    set('cms-biz-stat3-num', c.biz_stat3_num); set('cms-biz-stat3-label', c.biz_stat3_label);
+    set('cms-biz-stat4-num', c.biz_stat4_num); set('cms-biz-stat4-label', c.biz_stat4_label);
+    set('cms-biz-cta-h2', c.biz_cta_h2, true);
+    set('cms-biz-cta-p', c.biz_cta_p);
+    set('cms-biz-p1-tier', c.biz_pkg1_tier); set('cms-biz-p1-name', c.biz_pkg1_name); set('cms-biz-p1-price', c.biz_pkg1_price);
+    set('cms-biz-p2-tier', c.biz_pkg2_tier); set('cms-biz-p2-name', c.biz_pkg2_name); set('cms-biz-p2-price', c.biz_pkg2_price);
+    set('cms-biz-p3-tier', c.biz_pkg3_tier); set('cms-biz-p3-name', c.biz_pkg3_name);
+
+    // Main Pricing Prices
+    set('cms-price-vid-ai1', c.price_vid_ai1);
+    set('cms-price-vid-ai2', c.price_vid_ai2);
+    set('cms-price-vid-ai3', c.price_vid_ai3);
+    set('cms-price-vid-cam1', c.price_vid_cam1);
+    set('cms-price-vid-cam2', c.price_vid_cam2);
+    set('cms-price-photo1', c.price_photo1);
+    set('cms-price-photo2', c.price_photo2);
+    set('cms-price-aiphoto1', c.price_aiphoto1);
+    set('cms-price-aiphoto2', c.price_aiphoto2);
+    set('cms-price-mgmt1', c.price_mgmt1);
+    set('cms-price-mgmt2', c.price_mgmt2);
+    set('cms-price-mgmt3', c.price_mgmt3);
+    set('cms-price-pkg1', c.price_pkg1);
+    set('cms-price-pkg2', c.price_pkg2);
+    set('cms-price-pkg3', c.price_pkg3);
+
   } catch (e) {
     // Silently fail — hardcoded HTML content remains as fallback
   }
@@ -124,6 +204,10 @@ function goTo(page, pushState = true) {
     const activeTab = document.querySelector('.gallery-tab.active');
     if (activeTab) activeTab.click();
   }
+  // Auto-load niche page galleries
+  if (page === 'niche-automotive') loadNicheGallery('cars', 'niche-gallery-auto');
+  if (page === 'niche-apparel')    loadNicheGallery('apparel', 'niche-gallery-apparel');
+  if (page === 'niche-business')   loadNicheGallery('business', 'niche-gallery-biz');
 }
 
 window.addEventListener('popstate', e => {
@@ -256,6 +340,41 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// ---- NICHE PAGE GALLERIES ----
+const _nicheLbCache = {};
+
+async function loadNicheGallery(category, gridId) {
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+  grid.innerHTML = '<div class="gallery-loading" style="grid-column:1/-1">Loading...</div>';
+  const all = await _loadGalleryData();
+  const items = all.filter(item => item.category === category).slice(0, 6);
+  _nicheLbCache[gridId] = items;
+  if (items.length === 0) {
+    grid.innerHTML = '<div class="gallery-loading" style="grid-column:1/-1;opacity:0.4;">No items yet — upload in the CMS at /admin</div>';
+    return;
+  }
+  grid.innerHTML = items.map((item, i) => {
+    if (_isVideo(item.file)) {
+      const bg = item.poster ? `background-image:url(${item.poster});background-size:cover;background-position:center;` : '';
+      return `<div class="niche-gallery-item" onclick="openNicheItem(${i},'${gridId}')" style="${bg}">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+          <div class="gallery-play-btn">▶</div>
+        </div>
+      </div>`;
+    } else {
+      return `<div class="niche-gallery-item" onclick="openNicheItem(${i},'${gridId}')">
+        <img src="${item.file}" alt="${item.label || ''}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px;">
+      </div>`;
+    }
+  }).join('');
+}
+
+function openNicheItem(index, gridId) {
+  _lbItems = _nicheLbCache[gridId] || [];
+  openLightbox(index);
+}
+
 // ---- PRICING TABS ----
 function switchPricingTab(el, tab) {
   document.querySelectorAll('.pricing-tab').forEach(t => t.classList.remove('active'));
@@ -270,17 +389,7 @@ document.querySelectorAll('.porsche-bg').forEach(el => {
   el.style.backgroundImage = 'url(images/hero.jpg)';
 });
 
-// Niche hero backgrounds
-const nicheAutoEl = document.getElementById('nicheAutoBgImg');
-if (nicheAutoEl) nicheAutoEl.style.backgroundImage = 'url(images/hero.jpg)';
-
-// APPAREL_B64 extracted → images/card-apparel.webp
-const nicheApparelEl = document.getElementById('nicheApparelBgImg');
-if (nicheApparelEl) nicheApparelEl.style.backgroundImage = 'url(images/card-apparel.webp)';
-
-// PRODUCT_B64 extracted → images/card-business.jpg
-const nicheBusinessEl = document.getElementById('nicheBusinessBgImg');
-if (nicheBusinessEl) nicheBusinessEl.style.backgroundImage = 'url(images/card-business.jpg)';
+// Niche hero backgrounds are now CMS-controlled via loadContent()
 
 // ---- HAMBURGER ----
 function toggleMenu() {

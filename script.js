@@ -17,6 +17,16 @@ async function loadContent() {
       const el = document.getElementById(id);
       if (el) el.style.backgroundImage = 'url(' + url + ')';
     };
+    const _setAvatar = (id, imgUrl, name) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (imgUrl) {
+        el.style.backgroundImage = 'url(' + imgUrl + ')';
+        el.textContent = '';
+      } else if (name) {
+        el.textContent = name.charAt(0).toUpperCase();
+      }
+    };
 
     // Hero
     set('cms-hero-tag', c.hero_tag);
@@ -29,14 +39,14 @@ async function loadContent() {
     set('cms-stat3-num', c.stat3_num + '<span>+</span>', true);
     set('cms-stat3-label', c.stat3_label);
 
-    // Brand strip
-    if (Array.isArray(c.brands)) {
-      const track = document.getElementById('cms-brand-track');
-      if (track) {
-        track.innerHTML = c.brands.map((b, i) =>
-          (i > 0 ? '<span class="brand-sep">·</span>' : '') +
-          '<span class="brand-item">' + b + '</span>'
-        ).join('');
+    // Clients grid
+    if (Array.isArray(c.clients)) {
+      const grid = document.getElementById('cms-clients-grid');
+      if (grid) {
+        grid.innerHTML = c.clients.map(cl => {
+          const img = cl.logo ? `<img src="${cl.logo}" alt="${cl.name}">` : '';
+          return `<div class="client-card"><div class="client-logo-wrap">${img}</div><span class="client-name">${cl.name}</span></div>`;
+        }).join('');
       }
     }
 
@@ -77,17 +87,18 @@ async function loadContent() {
     set('cms-t1-quote', c.t1_quote);
     set('cms-t1-name', c.t1_name);
     set('cms-t1-role', c.t1_role);
-    if (c.t1_name) set('cms-t1-avatar', c.t1_name.charAt(0).toUpperCase());
+    _setAvatar('cms-t1-avatar', c.t1_avatar, c.t1_name);
     set('cms-t2-quote', c.t2_quote);
     set('cms-t2-name', c.t2_name);
     set('cms-t2-role', c.t2_role);
-    if (c.t2_name) set('cms-t2-avatar', c.t2_name.charAt(0).toUpperCase());
+    _setAvatar('cms-t2-avatar', c.t2_avatar, c.t2_name);
     set('cms-t3-quote', c.t3_quote);
     set('cms-t3-name', c.t3_name);
     set('cms-t3-role', c.t3_role);
-    if (c.t3_name) set('cms-t3-avatar', c.t3_name.charAt(0).toUpperCase());
+    _setAvatar('cms-t3-avatar', c.t3_avatar, c.t3_name);
 
     // About
+    setBg('about-hero-bg', c.about_hero_bg);
     set('cms-about-label', c.about_label);
     set('cms-about-headline', c.about_headline, true);
     set('cms-about-p1', c.about_p1, true);
@@ -102,6 +113,9 @@ async function loadContent() {
     set('cms-about-stat3-label', c.about_stat3_label);
     set('cms-about-stat4-num', c.about_stat4_num);
     set('cms-about-stat4-label', c.about_stat4_label);
+
+    // Services page background
+    setBg('services-bg', c.services_bg);
 
     // Niche — Automotive
     setBg('nicheAutoBgImg', c.auto_hero_bg);
@@ -420,8 +434,7 @@ function initBASlider() {
   function setPos(clientX) {
     const r          = slider.getBoundingClientRect();
     const pct        = Math.max(0.02, Math.min(0.98, (clientX - r.left) / r.width));
-    const rightClip  = (1 - pct) * 100;
-    afterEl.style.clipPath = `inset(0 ${rightClip}% 0 0)`;
+    afterEl.style.clipPath = `inset(0 0 0 ${pct * 100}%)`;
     handle.style.left      = pct * 100 + '%';
   }
 

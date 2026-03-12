@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Message Received — AMD STUDIO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --bg:#000;--bg2:#0a0a0a;--border:rgba(255,255,255,0.08);
+    --white:#fff;--gray:#888;--light:#ccc;--green:#00aaff;
+    --font-display:'Bebas Neue',sans-serif;
+    --font-body:'Syne',sans-serif;
+    --font-mono:'DM Mono',monospace;
+  }
+  html,body{height:100%;background:var(--bg);color:var(--white);font-family:var(--font-body);overflow:hidden;}
+
+  /* Background grid pattern */
+  body::before{
+    content:'';position:fixed;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
+    background-size:60px 60px;
+    pointer-events:none;z-index:0;
+  }
+
+  /* Glow accent */
+  body::after{
+    content:'';position:fixed;top:-200px;left:50%;transform:translateX(-50%);
+    width:600px;height:600px;
+    background:radial-gradient(circle,rgba(0,170,255,0.12) 0%,transparent 70%);
+    pointer-events:none;z-index:0;
+  }
+
+  .page{
+    position:relative;z-index:1;
+    height:100vh;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    padding:40px 24px;text-align:center;
+    animation:fadein 0.6s ease;
+  }
+  @keyframes fadein{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+  .logo{
+    font-family:var(--font-display);font-size:20px;letter-spacing:4px;
+    color:var(--white);margin-bottom:64px;
+    position:absolute;top:32px;left:50%;transform:translateX(-50%);
+  }
+  .logo span{color:var(--green);}
+
+  .icon{
+    width:72px;height:72px;border-radius:50%;
+    border:1px solid rgba(0,170,255,0.4);
+    background:rgba(0,170,255,0.08);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 36px;
+  }
+  .icon svg{width:32px;height:32px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+
+  .tag{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--green);margin-bottom:20px;
+    padding:8px 16px;border:1px solid rgba(0,170,255,0.3);border-radius:8px;
+    background:rgba(0,170,255,0.06);
+  }
+  .tag::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;box-shadow:0 0 6px var(--green);}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+
+  h1{
+    font-family:var(--font-display);
+    font-size:clamp(52px,8vw,100px);
+    line-height:0.92;letter-spacing:2px;text-transform:uppercase;
+    color:var(--white);margin-bottom:24px;
+  }
+  h1 em{color:var(--green);font-style:normal;}
+
+  p{
+    font-size:15px;color:var(--light);line-height:1.8;
+    max-width:420px;margin:0 auto 48px;
+  }
+
+  .actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+  .btn-primary{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;
+    background:var(--green);color:#000;padding:14px 32px;border-radius:8px;
+    cursor:pointer;border:none;font-weight:500;transition:all 0.3s;
+    text-decoration:none;display:inline-block;
+  }
+  .btn-primary:hover{background:#fff;transform:translateY(-2px);}
+
+  .btn-ghost{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;
+    background:transparent;color:var(--white);padding:14px 32px;border-radius:8px;
+    cursor:pointer;border:1px solid rgba(255,255,255,0.25);transition:all 0.3s;
+    text-decoration:none;display:inline-block;
+  }
+  .btn-ghost:hover{border-color:var(--white);}
+
+  .divider{
+    width:1px;height:40px;background:var(--border);
+    margin:48px auto 0;
+  }
+  .note{
+    font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;
+    text-transform:uppercase;color:var(--gray);margin-top:20px;
+  }
+
+  @media(max-width:600px){
+    .actions{flex-direction:column;align-items:center;}
+    .btn-primary,.btn-ghost{width:100%;max-width:280px;text-align:center;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="logo">AMD <span>STUDIO</span></div>
+
+  <div class="icon">
+    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+  </div>
+
+  <div class="tag">Message Received</div>
+
+  <h1>We'll be in<br/><em>touch.</em></h1>
+
+  <p>Thanks for reaching out to AMD STUDIO. We typically respond within 24 hours — sit tight and we'll get back to you shortly.</p>
+
+  <div class="actions">
+    <a href="/" class="btn-primary">Back to Home</a>
+    <a href="/index.html#contact" class="btn-ghost">Send Another</a>
+  </div>
+
+  <div class="divider"></div>
+  <div class="note">AMD STUDIO · Orange County, CA</div>
+</div>
+</body>
+</html>

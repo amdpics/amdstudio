@@ -14,7 +14,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo" onclick="goTo('home')">AMD STUDIO</div>
+  <div class="nav-logo" onclick="goTo('home')"><img src="images/logo.png" alt="AMD STUDIO" class="nav-logo-img"/>AMD STUDIO</div>
   <div class="nav-links">
     <a onclick="goTo('home')" id="nav-home" class="active">Home</a>
     <a onclick="goTo('about')" id="nav-about">About</a>
@@ -61,24 +61,6 @@
     </div>
   </section>
 
-  <!-- BRAND STRIP -->
-  <div class="brand-strip">
-    <div class="brand-track" id="cms-brand-track">
-      <span class="brand-item">ADRO</span>
-      <span class="brand-sep">·</span>
-      <span class="brand-item">Vorsteiner</span>
-      <span class="brand-sep">·</span>
-      <span class="brand-item">Vossen</span>
-      <span class="brand-sep">·</span>
-      <span class="brand-item">ADF Wheels</span>
-      <span class="brand-sep">·</span>
-      <span class="brand-item">RW Carbon</span>
-      <span class="brand-sep">·</span>
-      <span class="brand-item">AutoSync</span>
-      <span class="brand-sep">·</span>
-      <span class="brand-item">Toyota</span>
-    </div>
-  </div>
 
   <!-- WHO IT'S FOR -->
   <section class="section-white">
@@ -149,9 +131,11 @@
     <div class="ba-slider" id="baSlider">
       <div class="ba-before" id="cms-ba-before"></div>
       <div class="ba-after" id="baAfter"></div>
+      <div class="ba-label ba-label-before">BEFORE</div>
+      <div class="ba-label ba-label-after">AFTER</div>
       <div class="ba-handle" id="baHandle">
         <div class="ba-line"></div>
-        <div class="ba-circle">&#9664; &#9654;</div>
+        <div class="ba-circle"><span class="ba-arrow ba-arrow-l"></span><span class="ba-arrow ba-arrow-r"></span></div>
         <div class="ba-line"></div>
       </div>
     </div>
@@ -213,7 +197,8 @@
 <!-- ========== ABOUT PAGE ========== -->
 <div class="page" id="page-about">
   <div class="about-hero">
-    <div>
+    <div class="about-hero-bg" id="about-hero-bg"></div>
+    <div class="about-hero-left">
       <div class="section-label" id="cms-about-label">The Studio</div>
       <h1 class="about-headline" id="cms-about-headline">10 Years.<br/>One<br/><em>Vision.</em></h1>
     </div>
@@ -233,14 +218,14 @@
   <div class="about-brands" style="background:#fff;border-top:none;">
     <div class="section-label" style="color:var(--green);">Our Clients</div>
     <h3 style="color:#000;font-family:var(--font-display);font-size:clamp(36px,4vw,56px);letter-spacing:2px;text-transform:uppercase;line-height:1;margin-bottom:40px;">Brands We've<br/><span style="color:var(--green);">Created For.</span></h3>
-    <div class="brand-logos">
-      <span class="brand-pill" style="border-color:#ddd;color:#000;">ADRO</span>
-      <span class="brand-pill" style="border-color:#ddd;color:#000;">Vorsteiner</span>
-      <span class="brand-pill" style="border-color:#ddd;color:#000;">Vossen</span>
-      <span class="brand-pill" style="border-color:#ddd;color:#000;">ADF Wheels</span>
-      <span class="brand-pill" style="border-color:#ddd;color:#000;">RW Carbon</span>
-      <span class="brand-pill" style="border-color:#ddd;color:#000;">AutoSync</span>
-      <span class="brand-pill" style="border-color:#ddd;color:#000;">Toyota</span>
+    <div class="clients-grid" id="cms-clients-grid">
+      <div class="client-card"><div class="client-logo-wrap"></div><span class="client-name">ADRO</span></div>
+      <div class="client-card"><div class="client-logo-wrap"></div><span class="client-name">Vorsteiner</span></div>
+      <div class="client-card"><div class="client-logo-wrap"></div><span class="client-name">Vossen</span></div>
+      <div class="client-card"><div class="client-logo-wrap"></div><span class="client-name">ADF Wheels</span></div>
+      <div class="client-card"><div class="client-logo-wrap"></div><span class="client-name">RW Carbon</span></div>
+      <div class="client-card"><div class="client-logo-wrap"></div><span class="client-name">AutoSync</span></div>
+      <div class="client-card"><div class="client-logo-wrap"></div><span class="client-name">Toyota</span></div>
     </div>
   </div>
   <footer>
@@ -256,6 +241,7 @@
 
 <!-- ========== SERVICES PAGE ========== -->
 <div class="page" id="page-services">
+  <div class="services-bg" id="services-bg"></div>
   <div class="services-hero">
     <div class="section-label">What We Do</div>
     <div class="section-title">Five pillars.<br/>One studio.</div>
@@ -698,7 +684,7 @@
         <p id="cms-contact-response" style="font-size:14px;color:var(--light);line-height:1.8;">We typically respond within 24 hours. For rush projects, please mention your deadline in the message.</p>
       </div>
     </div>
-    <form class="contact-form" name="contact" method="POST" netlify>
+    <form class="contact-form" name="contact" method="POST" netlify action="/thanks.html">
       <h3>Start a Project</h3>
       <div class="form-group">
         <label>Your Name</label>

@@ -344,6 +344,18 @@ function _renderLightbox() {
   caption.textContent = item.label || '';
 }
 
+// ---- SAFARI AUTOPLAY FIX ----
+document.addEventListener('DOMContentLoaded', () => {
+  const heroVideo = document.querySelector('.hero-bg video');
+  if (heroVideo) {
+    const tryPlay = () => heroVideo.play().catch(() => {});
+    tryPlay();
+    // Retry on first user interaction in case Safari blocked it
+    document.addEventListener('touchstart', tryPlay, { once: true });
+    document.addEventListener('click',      tryPlay, { once: true });
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   // Land on correct page if URL has a hash
   const initialPage = location.hash.slice(1);

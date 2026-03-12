@@ -421,7 +421,9 @@ document.querySelectorAll('.porsche-bg').forEach(el => {
 // ---- HAMBURGER ----
 function toggleMenu() {
   const menu = document.getElementById('mobileMenu');
+  const ham  = document.getElementById('hamburger');
   menu.classList.toggle('open');
+  ham.classList.toggle('open');
 }
 
 // ---- BEFORE/AFTER SLIDER ----

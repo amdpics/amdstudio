@@ -9,8 +9,6 @@
   "stat3_num": "7",
   "stat3_label": "Major Brands",
 
-  "brands": ["ADRO", "Vorsteiner", "Vossen", "ADF Wheels", "RW Carbon", "AutoSync", "Toyota"],
-
   "for_label": "Who We Work With",
   "for_title": "Built for brands<br/>that demand more.",
   "for_subtitle": "Whether you're creating products, selling apparel, or scaling a business — AMD STUDIO creates content that performs.",
@@ -44,13 +42,18 @@
   "t1_quote": "AMD STUDIO completely transformed how we present our product online. The AI video content they produced for us was unlike anything we'd seen at this price point — cinematic, sharp, and on-brand.",
   "t1_name": "Vorsteiner Team",
   "t1_role": "Automotive Brand",
+  "t1_avatar": "",
   "t2_quote": "The attention to detail in every shot is insane. Our social media engagement tripled after switching to AMD STUDIO for our content. They understand both the creative and the algorithm.",
   "t2_name": "ADRO",
   "t2_role": "Automotive Accessories",
+  "t2_avatar": "",
   "t3_quote": "Working with AMD STUDIO was seamless from start to finish. They handled everything — the strategy, creation, and posting. We just focused on running our business while our brand grew.",
   "t3_name": "RW Carbon",
   "t3_role": "Carbon Fiber Parts",
+  "t3_avatar": "",
 
+  "services_bg": "images/hero.jpg",
+  "about_hero_bg": "images/hero.jpg",
   "about_label": "The Studio",
   "about_headline": "10 Years.<br/>One<br/><em>Vision.</em>",
   "about_p1": "AMD STUDIO is an AI-powered creative agency based in <strong>Orange County, CA</strong>, built on a decade of hands-on experience in media production, content strategy, and brand storytelling.",
@@ -64,5 +67,15 @@
   "about_stat3_num": "4K",
   "about_stat3_label": "Every Deliverable Upscaled",
   "about_stat4_num": "7+",
-  "about_stat4_label": "Trusted Brand Partners"
+  "about_stat4_label": "Trusted Brand Partners",
+
+  "clients": [
+    {"name": "ADRO",       "logo": ""},
+    {"name": "Vorsteiner", "logo": ""},
+    {"name": "Vossen",     "logo": ""},
+    {"name": "ADF Wheels", "logo": ""},
+    {"name": "RW Carbon",  "logo": ""},
+    {"name": "AutoSync",   "logo": ""},
+    {"name": "Toyota",     "logo": ""}
+  ]
 }

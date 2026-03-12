@@ -283,7 +283,7 @@ async function switchGalleryTab(el, tab) {
     if (_isVideo(item.file)) {
       const poster = item.poster ? `style="background-image:url(${item.poster});background-size:cover;background-position:center;"` : '';
       return `<div class="gallery-item gallery-item-video" onclick="openLightbox(${i})" ${poster}>
-        <div class="gallery-play-btn">▶</div>
+        <div class="gallery-play-btn"></div>
         <div class="gallery-label">${item.label || ''}</div>
       </div>`;
     } else {
@@ -386,7 +386,7 @@ async function loadNicheGallery(category, gridId) {
       const bg = item.poster ? `background-image:url(${item.poster});background-size:cover;background-position:center;` : '';
       return `<div class="niche-gallery-item" onclick="openNicheItem(${i},'${gridId}')" style="${bg}">
         <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-          <div class="gallery-play-btn">▶</div>
+          <div class="gallery-play-btn"></div>
         </div>
       </div>`;
     } else {

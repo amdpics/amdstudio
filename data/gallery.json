@@ -1,3 +1,10 @@
 {
-  "items": []
+  "items": [
+    {
+      "category": "cars",
+      "label": "Vossen - BMW G87 M2",
+      "file": "images/vossen-x-oblivion-smaller-v2-handbreak.mp4",
+      "poster": "images/drones.jpg"
+    }
+  ]
 }

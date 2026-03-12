@@ -57,16 +57,6 @@ collections:
             name: "stat3_label"
             widget: "string"
 
-          # BRAND STRIP
-          - label: "Brand Strip — Brands"
-            name: "brands"
-            widget: "list"
-            field:
-              label: "Brand Name"
-              name: "brand"
-              widget: "string"
-            hint: "Each entry is one brand name shown in the scrolling strip"
-
           # WHO WE WORK WITH
           - label: "Who We Work With — Section Label"
             name: "for_label"
@@ -193,6 +183,12 @@ collections:
             name: "t1_role"
             widget: "string"
 
+          - label: "Testimonial 1 — Profile Photo"
+            name: "t1_avatar"
+            widget: "image"
+            required: false
+            hint: "Optional. If left blank, the reviewer's initial letter will show instead."
+
           - label: "Testimonial 2 — Quote"
             name: "t2_quote"
             widget: "text"
@@ -204,6 +200,12 @@ collections:
           - label: "Testimonial 2 — Role"
             name: "t2_role"
             widget: "string"
+
+          - label: "Testimonial 2 — Profile Photo"
+            name: "t2_avatar"
+            widget: "image"
+            required: false
+            hint: "Optional. If left blank, the reviewer's initial letter will show instead."
 
           - label: "Testimonial 3 — Quote"
             name: "t3_quote"
@@ -217,7 +219,24 @@ collections:
             name: "t3_role"
             widget: "string"
 
+          - label: "Testimonial 3 — Profile Photo"
+            name: "t3_avatar"
+            widget: "image"
+            required: false
+            hint: "Optional. If left blank, the reviewer's initial letter will show instead."
+
+          # SERVICES SECTION
+          - label: "Services — Page Background Image"
+            name: "services_bg"
+            widget: "image"
+            hint: "Full-page background for the Services page. Dark overlay is applied automatically so text stays readable."
+
           # ABOUT SECTION
+          - label: "About — Hero Background Image"
+            name: "about_hero_bg"
+            widget: "image"
+            hint: "Full-width background image for the top of the About page. Dark overlay is applied automatically."
+
           - label: "About — Section Label"
             name: "about_label"
             widget: "string"
@@ -276,6 +295,21 @@ collections:
           - label: "About Stat 4 — Label"
             name: "about_stat4_label"
             widget: "string"
+
+          - label: "Client Logos"
+            name: "clients"
+            widget: "list"
+            label_singular: "Client"
+            summary: "{{fields.name}}"
+            fields:
+              - label: "Brand Name"
+                name: "name"
+                widget: "string"
+              - label: "Logo Image"
+                name: "logo"
+                widget: "image"
+                required: false
+                hint: "Upload a PNG or SVG with a transparent background. Logos display grayscale and brighten on hover."
 
       # ── AUTOMOTIVE PAGE ───────────────────────────────────────────────────
       - label: "Automotive Page"
